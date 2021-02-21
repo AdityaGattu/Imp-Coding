@@ -15,11 +15,10 @@ vector<int> subarraySum(int arr[], int n, int s){
                                 //  after adding last element , in order to  check currsum==s 
                                 //  we are doing final iteration 
     {
-        while(currsum>s && start<i-1)   // if currsum>s remove elee from left end along with
-                                        // checking if window consists of atleast one element
+        while(currsum>s && start<i-1)     // we can also write while(currsum>s) also since window can size 0 also;  
         {
-            currsum-=arr[start];
-            start++;
+            currsum-=arr[start];          // if currsum>s remove elee from left end along with
+            start++;                     // checking if window consists of atleast one element 
         }
         
         if(currsum==s)
