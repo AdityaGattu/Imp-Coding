@@ -16,7 +16,7 @@ char *encode(char *src)
           i++; 
       }
       
-      s1+=cnt+'0';                           //char+cnt;  // int+'0' ->converts int to string;
+      s1+=cnt+'0';                          //char+cnt;  // int+'0' ->converts int to string;
       
   }
   char *cstr = new char[s1.length() + 1];   //initalize char array in char array last char is '\0'
