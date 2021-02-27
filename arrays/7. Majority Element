@@ -1,0 +1,43 @@
+
+class Solution{
+  public:
+     // Function to find majority element in the array
+    // a: input array
+    // size: size of input array
+    int majorityElement(int arr[], int size)
+    {
+        
+        // your code here
+        
+        int count=0;
+        int candidate;
+        int index;
+        
+        for(int i=0;i<size;i++)       // Moore's voting algorithm
+        {
+            
+            if(count==0)                   
+            {
+                candidate=arr[i];        //Step 1. if cnt=0 -> candidate = curr ele
+                index=i;                 //index for return arr index at which majority ele is present.
+            }
+            if(arr[i]==candidate)       //Step 2. inc cnt if curr ele = candidate 
+            {
+                count+=1;
+            }
+            else
+            {
+                count--;                //Step3. if not equal decr
+            }
+        }
+        int c=0;
+        for(int i=0;i<size;i++)        // check if candidate is majority ele or not 
+        {                              // no need to check if given that majority element is present for sure.
+            if(arr[i]==candidate)      
+            {c++;}
+        }
+                                      // time complexity ->o(n) Space complexity ->O(1)
+        if(c>size/2){return candidate;}
+        return -1;
+    }
+};
