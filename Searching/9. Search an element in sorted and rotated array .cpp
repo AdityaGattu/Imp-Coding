@@ -1,4 +1,3 @@
-
 int binser(vector<int>& vec)
 {
     
@@ -52,6 +51,5 @@ int Search(vector<int> vec, int K) {
     
     int a=bs(vec,0,min_ind-1,K);
     int b=bs(vec,min_ind,vec.size()-1,K);
-    
     return max(a,b);
 }
